@@ -1,0 +1,155 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\dilan\\OneDrive\\Desktop\\HotelCode\\AppHotelWeb\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F2958A50-D99F-4036-B1A4-5EBE4065D464}|AppHotelWeb\\AppHotelWeb.csproj|c:\\users\\dilan\\onedrive\\desktop\\hotelcode\\apphotelweb\\apphotelweb\\views\\usuarios\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F2958A50-D99F-4036-B1A4-5EBE4065D464}|AppHotelWeb\\AppHotelWeb.csproj|solutionrelative:apphotelweb\\views\\usuarios\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2958A50-D99F-4036-B1A4-5EBE4065D464}|AppHotelWeb\\AppHotelWeb.csproj|C:\\Users\\dilan\\OneDrive\\Desktop\\HotelCode\\AppHotelWeb\\apphotelweb\\views\\reservacion\\creater.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F2958A50-D99F-4036-B1A4-5EBE4065D464}|AppHotelWeb\\AppHotelWeb.csproj|solutionrelative:apphotelweb\\views\\reservacion\\creater.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2958A50-D99F-4036-B1A4-5EBE4065D464}|AppHotelWeb\\AppHotelWeb.csproj|C:\\Users\\dilan\\OneDrive\\Desktop\\HotelCode\\AppHotelWeb\\apphotelweb\\models\\conexionapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2958A50-D99F-4036-B1A4-5EBE4065D464}|AppHotelWeb\\AppHotelWeb.csproj|solutionrelative:apphotelweb\\models\\conexionapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2958A50-D99F-4036-B1A4-5EBE4065D464}|AppHotelWeb\\AppHotelWeb.csproj|C:\\Users\\dilan\\OneDrive\\Desktop\\HotelCode\\AppHotelWeb\\apphotelweb\\views\\reservacion\\editar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F2958A50-D99F-4036-B1A4-5EBE4065D464}|AppHotelWeb\\AppHotelWeb.csproj|solutionrelative:apphotelweb\\views\\reservacion\\editar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2958A50-D99F-4036-B1A4-5EBE4065D464}|AppHotelWeb\\AppHotelWeb.csproj|C:\\Users\\dilan\\OneDrive\\Desktop\\HotelCode\\AppHotelWeb\\apphotelweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F2958A50-D99F-4036-B1A4-5EBE4065D464}|AppHotelWeb\\AppHotelWeb.csproj|solutionrelative:apphotelweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2958A50-D99F-4036-B1A4-5EBE4065D464}|AppHotelWeb\\AppHotelWeb.csproj|C:\\Users\\dilan\\OneDrive\\Desktop\\HotelCode\\AppHotelWeb\\apphotelweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F2958A50-D99F-4036-B1A4-5EBE4065D464}|AppHotelWeb\\AppHotelWeb.csproj|solutionrelative:apphotelweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2958A50-D99F-4036-B1A4-5EBE4065D464}|AppHotelWeb\\AppHotelWeb.csproj|C:\\Users\\dilan\\OneDrive\\Desktop\\HotelCode\\AppHotelWeb\\apphotelweb\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2958A50-D99F-4036-B1A4-5EBE4065D464}|AppHotelWeb\\AppHotelWeb.csproj|solutionrelative:apphotelweb\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2958A50-D99F-4036-B1A4-5EBE4065D464}|AppHotelWeb\\AppHotelWeb.csproj|C:\\Users\\dilan\\OneDrive\\Desktop\\HotelCode\\AppHotelWeb\\apphotelweb\\controllers\\reservacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2958A50-D99F-4036-B1A4-5EBE4065D464}|AppHotelWeb\\AppHotelWeb.csproj|solutionrelative:apphotelweb\\controllers\\reservacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 584,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\dilan\\OneDrive\\Desktop\\HotelCode\\AppHotelWeb\\AppHotelWeb\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "AppHotelWeb\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\dilan\\OneDrive\\Desktop\\HotelCode\\AppHotelWeb\\AppHotelWeb\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "AppHotelWeb\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAE8AAAAAAAAAAAAAAF8AAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "OverriddenGroupName": "AppHotelWeb\\Views\\Shared",
+              "WhenOpened": "2024-05-20T17:06:19.566Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\dilan\\OneDrive\\Desktop\\HotelCode\\AppHotelWeb\\AppHotelWeb\\Views\\Usuarios\\Create.cshtml",
+              "RelativeDocumentMoniker": "AppHotelWeb\\Views\\Usuarios\\Create.cshtml",
+              "ToolTip": "C:\\Users\\dilan\\OneDrive\\Desktop\\HotelCode\\AppHotelWeb\\AppHotelWeb\\Views\\Usuarios\\Create.cshtml",
+              "RelativeToolTip": "AppHotelWeb\\Views\\Usuarios\\Create.cshtml",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAAC0AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-28T20:22:48.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\dilan\\OneDrive\\Desktop\\HotelCode\\AppHotelWeb\\AppHotelWeb\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "AppHotelWeb\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\dilan\\OneDrive\\Desktop\\HotelCode\\AppHotelWeb\\AppHotelWeb\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "AppHotelWeb\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAD0AAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-28T20:07:08.608Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Editar.cshtml",
+              "DocumentMoniker": "C:\\Users\\dilan\\OneDrive\\Desktop\\HotelCode\\AppHotelWeb\\AppHotelWeb\\Views\\Reservacion\\Editar.cshtml",
+              "RelativeDocumentMoniker": "AppHotelWeb\\Views\\Reservacion\\Editar.cshtml",
+              "ToolTip": "C:\\Users\\dilan\\OneDrive\\Desktop\\HotelCode\\AppHotelWeb\\AppHotelWeb\\Views\\Reservacion\\Editar.cshtml",
+              "RelativeToolTip": "AppHotelWeb\\Views\\Reservacion\\Editar.cshtml",
+              "ViewState": "AQIAAGsAAAAAAAAAAAAAAH8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-28T19:20:24.631Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ConexionAPI.cs",
+              "DocumentMoniker": "C:\\Users\\dilan\\OneDrive\\Desktop\\HotelCode\\AppHotelWeb\\AppHotelWeb\\Models\\ConexionAPI.cs",
+              "RelativeDocumentMoniker": "AppHotelWeb\\Models\\ConexionAPI.cs",
+              "ToolTip": "C:\\Users\\dilan\\OneDrive\\Desktop\\HotelCode\\AppHotelWeb\\AppHotelWeb\\Models\\ConexionAPI.cs",
+              "RelativeToolTip": "AppHotelWeb\\Models\\ConexionAPI.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAwAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T15:16:27.532Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CreateR.cshtml",
+              "DocumentMoniker": "C:\\Users\\dilan\\OneDrive\\Desktop\\HotelCode\\AppHotelWeb\\AppHotelWeb\\Views\\Reservacion\\CreateR.cshtml",
+              "RelativeDocumentMoniker": "AppHotelWeb\\Views\\Reservacion\\CreateR.cshtml",
+              "ToolTip": "C:\\Users\\dilan\\OneDrive\\Desktop\\HotelCode\\AppHotelWeb\\AppHotelWeb\\Views\\Reservacion\\CreateR.cshtml",
+              "RelativeToolTip": "AppHotelWeb\\Views\\Reservacion\\CreateR.cshtml",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAABgAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-28T14:47:03.716Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UsuariosController.cs",
+              "DocumentMoniker": "C:\\Users\\dilan\\OneDrive\\Desktop\\HotelCode\\AppHotelWeb\\AppHotelWeb\\Controllers\\UsuariosController.cs",
+              "RelativeDocumentMoniker": "AppHotelWeb\\Controllers\\UsuariosController.cs",
+              "ToolTip": "C:\\Users\\dilan\\OneDrive\\Desktop\\HotelCode\\AppHotelWeb\\AppHotelWeb\\Controllers\\UsuariosController.cs",
+              "RelativeToolTip": "AppHotelWeb\\Controllers\\UsuariosController.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAmwD4AAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T14:24:25.858Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ReservacionController.cs",
+              "DocumentMoniker": "C:\\Users\\dilan\\OneDrive\\Desktop\\HotelCode\\AppHotelWeb\\AppHotelWeb\\Controllers\\ReservacionController.cs",
+              "RelativeDocumentMoniker": "AppHotelWeb\\Controllers\\ReservacionController.cs",
+              "ToolTip": "C:\\Users\\dilan\\OneDrive\\Desktop\\HotelCode\\AppHotelWeb\\AppHotelWeb\\Controllers\\ReservacionController.cs",
+              "RelativeToolTip": "AppHotelWeb\\Controllers\\ReservacionController.cs",
+              "ViewState": "AQIAAJQAAAAAAAAAAAAQwG4AAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T14:20:00.471Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

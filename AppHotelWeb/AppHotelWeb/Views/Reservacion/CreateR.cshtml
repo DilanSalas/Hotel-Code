@@ -1,0 +1,110 @@
+﻿@model AppHotelWeb.Models.Reservacion
+
+@{
+    ViewData["Title"] = "CreateR";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 id="LetraEspecial">Agregar Reservación</h1>
+
+<h4 id="LetraEspecial">Reservacion</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateR" id="LetraEspecial">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @if (TempData["Mensaje"] != null)
+            {
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Error!</strong> @TempData["Mensaje"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+            <div class="form-group">
+                <label asp-for="Tipo" class="control-label"></label>
+                <select asp-for="Tipo" class="form-control">
+                    <option value="">Seleccione un tipo de paquete</option>
+                    <option value="TodoIncluido">Todo incluido</option>
+                    <option value="Alimentacion">Alimentación</option>
+                    <option value="Hospedaje">Hospedaje</option>
+                </select>
+                <span asp-validation-for="Tipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Noche" class="control-label"></label>
+                <input asp-for="Noche" class="form-control" />
+                <span asp-validation-for="Noche" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CantidadPersonas" class="control-label"></label>
+                <input asp-for="CantidadPersonas" class="form-control" />
+                <span asp-validation-for="CantidadPersonas" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="idUsuario" class="control-label">Cedula</label>
+                <input asp-for="idUsuario" class="form-control" />
+                <span asp-validation-for="idUsuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tipoPago" class="control-label"></label>
+                <select asp-for="tipoPago" class="form-control" onchange="mostrarCampos(this.value)">
+                    <option value="">Seleccione un tipo de pago</option>
+                    <option value="Efectivo">Efectivo</option>
+                    <option value="Tarjeta">Tarjeta</option>
+                    <option value="Cheque">Cheque</option>
+                </select>
+                <span asp-validation-for="tipoPago" class="text-danger"></span>
+            </div>
+
+            <div id="camposCheque" style="display: none;">
+
+                <div class="form-group">
+                    <label asp-for="IdCheque" class="control-label"></label>
+                    <input asp-for="IdCheque" class="form-control" />
+                    <span asp-validation-for="IdCheque" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Banco" class="control-label"></label>
+                    <select asp-for="Banco" class="form-control">
+                        <option value="">Seleccione el banco del cheque</option>
+                        <option value="BN">Banco Nacional de Costa Rica</option>
+                        <option value="BCR">Banco de Costa Rica</option>
+                        <option value="BP">Banco Popular</option>
+                        <option value="BAC">BAC</option>
+                    </select>
+                    <span asp-validation-for="Banco" class="text-danger"></span>
+                </div>
+                
+
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary btn btn-outline-dark mt-3" id="LetraEspecial" />
+            </div>
+
+           
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary btn btn-outline-dark mt-3" id="LetraEspecial">Volver</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+<script>
+    function mostrarCampos() {
+        var tipoPago = document.getElementById("tipoPago").value;
+        var camposCheque = document.getElementById("camposCheque");
+
+        if (tipoPago === "Cheque") {
+            camposCheque.style.display = "block";
+        } else {
+            camposCheque.style.display = "none";
+        }
+    }
+</script>

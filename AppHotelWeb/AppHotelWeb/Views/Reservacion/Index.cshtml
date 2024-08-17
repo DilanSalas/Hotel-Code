@@ -1,0 +1,146 @@
+﻿@model IEnumerable<AppHotelWeb.Models.Reservacion>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 id="LetraEspecial">Lista de reservaciones</h1>
+<table class="table text-center" id="LetraEspecial">
+    <thead id="LetraEspecial">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Costo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Noche)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prima)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MontoTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MontoTotalCol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadPersonas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mensualidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descuento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescuentoCol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Impuesto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImpuestoCol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.idUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tipoPago)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdCheque)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Banco)
+            </th>
+
+            <th>
+                Herramientas
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            <tr id="LetraEspecial">
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Costo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Noche)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prima)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MontoTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MontoTotalCol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadPersonas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mensualidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descuento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescuentoCol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Impuesto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImpuestoCol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipoPago)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCheque)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Banco)
+            </td>
+            <td>
+
+                    @Html.ActionLink("✘", "Eliminar", new { id = item.Id }, new { @class = "btn btn-danger btn-outline-dark mt-3", @id = "LetraEspecial" })
+                    @Html.ActionLink("ⓘ", "Detalles", new { id = item.Id }, new { @class = "btn btn-primary btn-outline-dark mt-3", @id = "LetraEspecial" })
+                    @Html.ActionLink("✎", "Editar", new { id = item.Id }, new { @class = "btn btn-warning btn-outline-dark mt-3", @id = "LetraEspecial" })
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

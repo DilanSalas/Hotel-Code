@@ -1,0 +1,182 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Luxury - Inicio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .carousel-item img {
+            max-height: 600px;
+            object-fit: cover;
+        }
+
+        .carousel-img {
+            max-height: 400px; /* Ajusta el tamaño según tu preferencia */
+            width: auto;
+            margin: 0 auto; /* Centra la imagen horizontalmente */
+        }
+
+        .section {
+            padding: 50px 0;
+        }
+
+        .feature-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+            .feature-card:hover {
+                transform: scale(1.05);
+            }
+
+            .feature-card img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+
+        .feature-card-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .feature-card img, .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row my-5">
+            <div class="col-md-12 text-center">
+                <h1>Bienvenido a Luxury Hotel</h1>
+                <p class="lead">Descubre el lujo y la relajación en nuestro exclusivo resort de playa.</p>
+            </div>
+        </div>
+
+        <div class="row section">
+            <div class="col-md-12">
+                <div id="hotelCarousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#hotelCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#hotelCarousel" data-slide-to="1"></li>
+                        <li data-target="#hotelCarousel" data-slide-to="2"></li>
+                        <li data-target="#hotelCarousel" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://i.pinimg.com/736x/3b/51/e0/3b51e0101dfa5d1d4a4950f405d5495d.jpg" class="d-block w-100 carousel-img" alt="Hotel 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://i.pinimg.com/564x/9b/71/1e/9b711e6b2f02b9fbdeee3945f7c2c2f9.jpg" class="d-block w-100 carousel-img" alt="Hotel 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://i.pinimg.com/564x/78/31/d4/7831d4ef0f423b92fe334d2f81cb1be4.jpg" class="d-block w-100 carousel-img" alt="Hotel 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://i.pinimg.com/564x/04/84/fa/0484fade8c3ddd0d6259ec99fd969b8f.jpg" class="d-block w-100 carousel-img" alt="Hotel 4">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#hotelCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+                    <a class="carousel-control-next" href="#hotelCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Siguiente</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row section">
+            <div class="col-md-12 text-center mb-4">
+                <h2>Nuestros paquetes</h2>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <img src="https://i.pinimg.com/564x/1f/92/a2/1f92a287b698b4e7745141edfd190497.jpg" alt="Todo Incluido">
+                    <div class="feature-card-body">
+                        <h5 class="card-title">Todo Incluido</h5>
+                        <p class="card-text">Disfruta de nuestro plan todo incluido con acceso ilimitado a todas las instalaciones y servicios. Precio: $450,  ₡231 300</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <img src="https://i.pinimg.com/564x/20/92/fb/2092fb2e0d485488ff31375c5f9a13ab.jpg" alt="Hospedaje">
+                    <div class="feature-card-body">
+                        <h5 class="card-title">Hospedaje</h5>
+                        <p class="card-text">Reserva tu suite de lujo y disfruta de una experiencia inigualable en nuestro resort. El paquete solo incluye hospedaje. Precio: $275,  ₡141350</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <img src="https://i.pinimg.com/564x/80/86/fb/8086fbe1e9e86c5ab07e7702cc6029cb.jpg" alt="Alimentación">
+                    <div class="feature-card-body">
+                        <h5 class="card-title">Alimentación</h5>
+                        <p class="card-text">Deleita tu paladar con nuestra selección de restaurantes gourmet. El paquete solo incluye alimentación. Precio: $210,  ₡107 940</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row section bg-light">
+            <div class="col-md-12 text-center mb-4">
+                <h2>Experiencias únicas</h2>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <img src="https://i.pinimg.com/564x/52/12/41/521241e132a18787fd716993af055d91.jpg" class="card-img-top" alt="Spa y Bienestar">
+                    <div class="card-body">
+                        <h5 class="card-title">Spa y Bienestar</h5>
+                        <p class="card-text">Relájate en nuestras instalaciones de spa de lujo y disfruta de tratamientos exclusivos para el cuidado del cuerpo y la mente.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <img src="https://i.pinimg.com/564x/33/6a/0f/336a0f71de3f57a327b0a411ee3b35f1.jpg" class="card-img-top" alt="Actividades">
+                    <div class="card-body">
+                        <h5 class="card-title">Actividades</h5>
+                        <p class="card-text">Descubre una amplia variedad de actividades para toda la familia, como yoga, zumba y más.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <img src="https://i.pinimg.com/564x/ed/2e/58/ed2e587657b659f6daa59a0cccd7f456.jpg" class="card-img-top" alt="Eventos y Bodas">
+                    <div class="card-body">
+                        <h5 class="card-title">Eventos y Bodas</h5>
+                        <p class="card-text">Celebra tus momentos más especiales en nuestro resort, desde bodas de ensueño hasta eventos corporativos inolvidables.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <img src="https://i.pinimg.com/564x/3c/c0/68/3cc06805b9d29e63dba7543642444ca6.jpg" class="card-img-top" alt="Deportes Acuáticos">
+                    <div class="card-body">
+                        <h5 class="card-title">Deportes Acuáticos</h5>
+                        <p class="card-text">Experimenta la emoción de los deportes acuáticos con nuestras actividades, que incluyen buceo, kayak, surf y mucho más.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

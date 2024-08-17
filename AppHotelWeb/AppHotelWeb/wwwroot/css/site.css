@@ -1,0 +1,128 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+body {
+    background-image: linear-gradient(to bottom, goldenrod, white);
+}
+
+.login-container {
+    margin-top: 100px;
+}
+
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #6a11cb;
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+}
+
+
+#FormularioLogin {
+    border: 1px solid #dedede;
+    border-radius: 1em;
+    box-shadow: 5px 5px 5px rgba(25,0,0,25);
+    padding: 1em;
+    color: #000000;
+    font-family: 'Georgia', Times, serif;
+}
+
+.Formularios {
+    margin: 0 auto;
+    width: auto;
+    text-align: left;
+    color: #000000;
+    font-family: 'Georgia', Times, serif;
+    border: 1px solid #dedede;
+    border-radius: 1em;
+    box-shadow: 5px 5px 5px rgba(25,0,0,25);
+    padding: 1em;
+}
+
+/* Estilos para párrafos */
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Estilos para encabezados */
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Estilos para enlaces */
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+.navbar-nav .nav-link {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Cambiar a tu tipo de letra preferido */
+    font-style: italic; /* Letra en cursiva */
+    font-weight: bold; /* Letra en negrita */
+}
+#Luxury {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: bold;
+    background-image: linear-gradient(to left, black, goldenrod);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#FondoDorado {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: bold;
+    background-image: linear-gradient(to left, black, goldenrod);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+#LetraEspecial {
+    font-family: 'Georgia', Times, serif; 
+    color: #000000; 
+}
+
+
+
+

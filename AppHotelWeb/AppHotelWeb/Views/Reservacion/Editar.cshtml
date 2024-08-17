@@ -1,0 +1,128 @@
+﻿@model AppHotelWeb.Models.Reservacion
+
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Editar</h1>
+
+<h4>Reservacion</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Editar">
+            <div asp-validation-summary="ModelOnly" class="text-danger" ></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Tipo" class="control-label"></label>
+                <select asp-for="Tipo" class="form-control">
+                    <option value="">Seleccione un tipo de paquete</option>
+                    <option value="TodoIncluido">Todo incluido</option>
+                    <option value="Alimentacion">Alimentación</option>
+                    <option value="Hospedaje">Hospedaje</option>
+                </select>
+                <span asp-validation-for="Tipo" class="text-danger"></span>
+            </div>
+            <div class="form-group" >
+                <label asp-for="Costo" class="control-label" ></label>
+                <input asp-for="Costo" class="form-control" readonly />
+                <span asp-validation-for="Costo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Noche" class="control-label"></label>
+                <input asp-for="Noche" class="form-control" readonly />
+                <span asp-validation-for="Noche" class="text-danger"></span>
+            </div>
+            <div class="form-group" >
+                <label asp-for="Prima" class="control-label"></label>
+                <input asp-for="Prima" class="form-control" readonly />
+                <span asp-validation-for="Prima" class="text-danger"></span>
+            </div>
+            <div class="form-group" >
+                <label asp-for="MontoTotal" class="control-label"></label>
+                <input asp-for="MontoTotal" class="form-control" readonly />
+                <span asp-validation-for="MontoTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group" >
+                <label asp-for="MontoTotalCol" class="control-label"></label>
+                <input asp-for="MontoTotalCol" class="form-control" readonly />
+                <span asp-validation-for="MontoTotalCol" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CantidadPersonas" class="control-label">Cantidad de personas:</label>
+                <input asp-for="CantidadPersonas" class="form-control"  />
+                <span asp-validation-for="CantidadPersonas" class="text-danger"></span>
+            </div>
+            <div class="form-group" >
+                <label asp-for="Mensualidad" class="control-label">Mensualida estimada:</label>
+                <input asp-for="Mensualidad" class="form-control" readonly />
+                <span asp-validation-for="Mensualidad" class="text-danger"></span>
+            </div>
+            <div class="form-group"  >
+                <label asp-for="Descuento" class="control-label">Descuento en dolares:</label>
+                <input asp-for="Descuento" class="form-control" readonly />
+                <span asp-validation-for="Descuento" class="text-danger"></span>
+            </div>
+            <div class="form-group" >
+                <label asp-for="DescuentoCol" class="control-label">Descuento en colones:</label>
+                <input asp-for="DescuentoCol" class="form-control" readonly />
+                <span asp-validation-for="DescuentoCol" class="text-danger"></span>
+            </div>
+            <div class="form-group" >
+                <label asp-for="Impuesto" class="control-label">Impuesto en dolares:</label>
+                <input asp-for="Impuesto" class="form-control" readonly />
+                <span asp-validation-for="Impuesto" class="text-danger"></span>
+            </div>
+            <div class="form-group" >
+                <label asp-for="ImpuestoCol" class="control-label">Impuesto en colones:</label>
+                <input asp-for="ImpuestoCol" class="form-control" readonly />
+                <span asp-validation-for="ImpuestoCol" class="text-danger"></span>
+            </div>
+            <div class="form-group readonly" >
+                <label asp-for="idUsuario" class="control-label">Cédula del cliente:</label>
+                <input asp-for="idUsuario" class="form-control" readonly />
+                <span asp-validation-for="idUsuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tipoPago" class="control-label">Tipo de pago:</label>
+                <select asp-for="tipoPago" class="form-control" >
+                    <option value="">Seleccione un tipo de pago</option>
+                    <option value="Efectivo">Efectivo</option>
+                    <option value="Tarjeta">Tarjeta</option>
+                    <option value="Cheque">Cheque</option>
+                </select>
+                <span asp-validation-for="tipoPago" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdCheque" class="control-label">Id cheque:</label>
+                <input asp-for="IdCheque" class="form-control" />
+                <span asp-validation-for="IdCheque" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Banco" class="control-label">Banco:</label>
+                <select asp-for="Banco" class="form-control">
+                    <option value="">Seleccione el banco del cheque</option>
+                    <option value="BN">Banco Nacional de Costa Rica</option>
+                    <option value="BCR">Banco de Costa Rica</option>
+                    <option value="BP">Banco Popular</option>
+                    <option value="BAC">BAC</option>
+                </select>
+                <span asp-validation-for="Banco" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary btn-outline-dark" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-primary btn-outline-dark">Volver</a>
+</div>
+
