@@ -9,243 +9,237 @@ namespace AppHotelWeb.Controllers
 {
     public class UsuariosController : Controller
     {
-       
-
-        //Para establecer la relacion con la API
+        // Para establecer la relación con la API
         private HttpClient client;
 
-        //Variables para el manejo de la API de info del cliente
+        // Variables para el manejo de la API de info del cliente
         private HttpClient clientInfoCliente = null;
         private ConexionAPI conexionAPI = null;
-      
+
         public UsuariosController()
         {
-           conexionAPI = new ConexionAPI();
+            conexionAPI = new ConexionAPI();
             client = conexionAPI.Iniciar();
-
-
         }
-        //se crea para que nos devuelva la lista de usuarios
 
         public async Task<IActionResult> Index()
         {
-            // Se inicializa una lista vacía de Usuario
-            List<Usuario> listaUsuarios = new List<Usuario>();
-
-            // Se llama a la API externa de forma asíncrona
-            HttpResponseMessage httpResponse = await client.GetAsync("/Usuarios/Listado");
-
-            // Se verifica si la respuesta fue exitosa
-            if (httpResponse.IsSuccessStatusCode)
+            try
             {
-                // Se lee la respuesta JSON
-                var resultado = await httpResponse.Content.ReadAsStringAsync();
+                List<Usuario> listaUsuarios = new List<Usuario>();
+                HttpResponseMessage httpResponse = await client.GetAsync("/Usuarios/Listado");
 
-                // Se deserializa el JSON en una lista de objetos Usuario
-                listaUsuarios = JsonConvert.DeserializeObject<List<Usuario>>(resultado);
+                if (httpResponse.IsSuccessStatusCode)
+                {
+                    var resultado = await httpResponse.Content.ReadAsStringAsync();
+                    listaUsuarios = JsonConvert.DeserializeObject<List<Usuario>>(resultado);
+                    listaUsuarios = listaUsuarios.Where(u => u.Rol == "cliente").ToList();
+                }
 
-                // Se filtran los usuarios que sean clientes
-                listaUsuarios = listaUsuarios.Where(u => u.Rol == "cliente").ToList();
+                return View(listaUsuarios);
             }
-
-            // Se devuelve la vista con la lista de objetos Usuario
-            return View(listaUsuarios);
+            catch (Exception ex)
+            {
+                TempData["Mensaje"] = "Error al cargar la lista de usuarios: " + ex.Message;
+                return View(new List<Usuario>());
+            }
         }
 
-
-        //Métodos post y get de create
         [HttpGet]
         public IActionResult Create()
         {
-            return View();
+            try
+            {
+                return View();
+            }
+            catch (Exception ex)
+            {
+                TempData["Mensaje"] = "Error al cargar la vista de creación: " + ex.Message;
+                return RedirectToAction("Index");
+            }
         }
+
         [HttpPost]
         public async Task<IActionResult> Create([Bind] Usuario user)
         {
-            user.id = 0;
-
-            if (user.Rol == "Administrador")
+            try
             {
-                // Condicional para que al registrarse solo los administradores sepan de esta contraseña
-                // IMPORTANTE VER ESTA CONTRASEÑA PARA PODER SER ADMINISTRADOR
-                if (user.clave != "AdminPassword")
+                user.id = 0;
+
+                if (user.Rol == "Administrador" && user.clave != "AdminPassword")
                 {
                     TempData["Mensaje"] = "Contraseña incorrecta para administradores";
                     return View(user);
                 }
-            }
 
-            var subir = await client.PutAsJsonAsync<Usuario>("/Usuarios/Agregar", user);
+                var subir = await client.PutAsJsonAsync<Usuario>("/Usuarios/Agregar", user);
 
-            if (subir.IsSuccessStatusCode)
-            {
-                if (user.Rol == "Administrador")
+                if (subir.IsSuccessStatusCode)
                 {
                     return RedirectToAction("Login");
                 }
                 else
                 {
-                    return RedirectToAction("Login");
+                    TempData["Mensaje"] = "No se logró almacenar el usuario";
+                    return View(user);
                 }
             }
-            else
+            catch (Exception ex)
             {
-                TempData["Mensaje"] = "No se logró almacenar el usuario";
+                TempData["Mensaje"] = "Error al crear el usuario: " + ex.Message;
                 return View(user);
             }
         }
 
-
         [HttpGet]
         public async Task<IActionResult> Details(int id)
         {
-            var user = new Usuario();
-
-            HttpResponseMessage requestMessage = await client.GetAsync($"/Usuarios/Buscar/{id}");
-
-            if (requestMessage.IsSuccessStatusCode)
+            try
             {
-                var resultado = requestMessage.Content.ReadAsStringAsync().Result;
-                user = JsonConvert.DeserializeObject<Usuario>(resultado);
-            }
-            return View(user);
-        }//Fin metodo
+                var user = new Usuario();
+                HttpResponseMessage requestMessage = await client.GetAsync($"/Usuarios/Buscar/{id}");
 
+                if (requestMessage.IsSuccessStatusCode)
+                {
+                    var resultado = await requestMessage.Content.ReadAsStringAsync();
+                    user = JsonConvert.DeserializeObject<Usuario>(resultado);
+                }
+
+                return View(user);
+            }
+            catch (Exception ex)
+            {
+                TempData["Mensaje"] = "Error al cargar los detalles del usuario: " + ex.Message;
+                return RedirectToAction("Index");
+            }
+        }
 
         [HttpGet]
         public async Task<IActionResult> Delete(int? id)
         {
-            Usuario user = new Usuario();
-
-
-            HttpResponseMessage responseMessage = await client.GetAsync($"/Usuarios/Buscar/{id}");
-
-            if (responseMessage.IsSuccessStatusCode)
+            try
             {
-                var resultado = responseMessage.Content.ReadAsStringAsync().Result;
+                Usuario user = new Usuario();
+                HttpResponseMessage responseMessage = await client.GetAsync($"/Usuarios/Buscar/{id}");
 
-                user = JsonConvert.DeserializeObject<Usuario>(resultado);
+                if (responseMessage.IsSuccessStatusCode)
+                {
+                    var resultado = await responseMessage.Content.ReadAsStringAsync();
+                    user = JsonConvert.DeserializeObject<Usuario>(resultado);
+                }
+
+                return View(user);
             }
-            //se envia el libro al front end
-            return View(user);
-
+            catch (Exception ex)
+            {
+                TempData["Mensaje"] = "Error al cargar el usuario para eliminar: " + ex.Message;
+                return RedirectToAction("Index");
+            }
         }
-
-
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ActionName("Delete")]
         public async Task<IActionResult> DeleteUser(int id)
         {
-       
-            HttpResponseMessage responseMessage = await client.DeleteAsync($"Usuarios/Eliminar/{id}");
-
-
-
-            return RedirectToAction("Index");
-        }//Fin metodo 
-
-        /// <summary>
-        /// Metodo para extraer la informacion del cliente desde la API
-        /// </summary>
-        /// <param name="pCedula"></param>
-   
-
-
-
-
-
+            try
+            {
+                HttpResponseMessage responseMessage = await client.DeleteAsync($"Usuarios/Eliminar/{id}");
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                TempData["Mensaje"] = "Error al eliminar el usuario: " + ex.Message;
+                return RedirectToAction("Index");
+            }
+        }
 
         public IActionResult Login()
         {
-            return View();
-        }//Fin metod 
+            try
+            {
+                return View();
+            }
+            catch (Exception ex)
+            {
+                TempData["Mensaje"] = "Error al cargar la vista de inicio de sesión: " + ex.Message;
+                return RedirectToAction("Index");
+            }
+        }
 
-
-
-
-
-        /// <summary>
-        /// Metodo para validar el correo y contraseña del usuario
-        /// </summary>
-        /// <param name="temp"></param>
-        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login([Bind] Usuario user)
         {
-            // Utiliza el método para validar los datos del usuario
-            var temp = await ValidarUsuario(user);
-
-            // Verifica si hay datos
-            if (temp != null)
+            try
             {
-                // Se crea una lista de claims para el usuario autenticado
-                var userClaims = new List<Claim>
+                var temp = await ValidarUsuario(user);
+
+                if (temp != null)
                 {
-                     new Claim(ClaimTypes.Name, temp.Cedula.ToString()),
-                    new Claim(ClaimTypes.Role, temp.Rol)
-                };
+                    var userClaims = new List<Claim>
+                    {
+                        new Claim(ClaimTypes.Name, temp.Cedula.ToString()),
+                        new Claim(ClaimTypes.Role, temp.Rol)
+                    };
 
-                // Se crea una identidad con los claims
-                var claimsIdentity = new ClaimsIdentity(userClaims, "User Identity");
+                    var claimsIdentity = new ClaimsIdentity(userClaims, "User Identity");
+                    var userPrincipal = new ClaimsPrincipal(claimsIdentity);
+                    await HttpContext.SignInAsync(userPrincipal);
 
-                // Se crea el principal con la identidad
-                var userPrincipal = new ClaimsPrincipal(claimsIdentity);
-
-                // Se realiza la autenticación dentro del contexto HTTP
-                await HttpContext.SignInAsync(userPrincipal);
-
-                // Se redirige al usuario a la página principal
-                return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    TempData["Mensaje"] = "Error, la cédula o contraseña son incorrectos...";
+                    return View(user);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                // Se indica al usuario que los datos son incorrectos
-                TempData["Mensaje"] = "Error, la cédula o contraseña son incorrectos...";
-
-                // Se deja al usuario dentro del formulario del login
+                TempData["Mensaje"] = "Error al iniciar sesión: " + ex.Message;
                 return View(user);
             }
         }
 
         private async Task<Usuario> ValidarUsuario(Usuario temp)
         {
-            Usuario autorizado = null; // Variable para almacenar los datos del usuario
-
-            // Se busca al usuario por medio de la cédula en la API
-            HttpResponseMessage response = await client.GetAsync($"/Usuarios/Buscar/{temp.Cedula.ToString()}");
-
-            if (response.IsSuccessStatusCode)
+            try
             {
-                var resultado = await response.Content.ReadAsStringAsync();
-                var user = JsonConvert.DeserializeObject<Usuario>(resultado);
+                Usuario autorizado = null;
+                HttpResponseMessage response = await client.GetAsync($"/Usuarios/Buscar/{temp.Cedula.ToString()}");
 
-                if (user != null)
+                if (response.IsSuccessStatusCode)
                 {
-                    if (user.clave != null && user.clave.Equals(temp.clave))
+                    var resultado = await response.Content.ReadAsStringAsync();
+                    var user = JsonConvert.DeserializeObject<Usuario>(resultado);
+
+                    if (user != null && user.clave != null && user.clave.Equals(temp.clave))
                     {
-                        autorizado = user; // Se indica que está autorizado
+                        autorizado = user;
                     }
                 }
+
+                return autorizado;
             }
-
-            // Se retorna los datos del usuario autorizado
-            return autorizado;
+            catch
+            {
+                return null;
+            }
         }
-
 
         public async Task<IActionResult> Logout()
         {
-            // Aqui se realiza el cierre de sesion
-            await HttpContext.SignOutAsync();
-
-            // Se ubica al usuario en la pagina de inicio
-            return RedirectToAction("Index", "Home");
+            try
+            {
+                await HttpContext.SignOutAsync();
+                return RedirectToAction("Index", "Home");
+            }
+            catch (Exception ex)
+            {
+                TempData["Mensaje"] = "Error al cerrar sesión: " + ex.Message;
+                return RedirectToAction("Index", "Home");
+            }
         }
-
-
-
-    }//Fin class
-}//Fin namespace
+    }
+}
